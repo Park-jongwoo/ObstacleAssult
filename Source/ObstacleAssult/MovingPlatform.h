@@ -29,11 +29,13 @@ private:
 	FVector PlatformVelocity = FVector(100, 0, 0);
 	UPROPERTY(EditAnywhere, Category = "Moving Playform")
 	float MovedDistance = 100;
+	UPROPERTY(EditAnywhere, Category = "Rotaion")
+	FRotator RotationVelocity;
 
 	FVector StartLocation;
 	void MovePlatform(float DeltaTime);
 	void RotatePlatform(float DeltaTime);
 
-	bool ShouldPlatformReturn();
-	float GetDistanceMoved();
+	bool ShouldPlatformReturn() const;
+	float GetDistanceMoved() const;
 };
